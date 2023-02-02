@@ -1,0 +1,17 @@
+1.
+
+from django.shortcuts import render, get_object_or_404, redirect
+def delete_entry(request, pk):
+    entry = get_object_or_404(Entry, pk=pk)
+    entry.delete()
+    return redirect('blog_list')
+path('entry/<int:pk>/delete/', delete_entry, name='entry_delete')
+<a href="{% url 'entry_delete' entry.pk %}">Delete</a>
+
+2.
+
+from django.utils import timezone
+class Entry(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
