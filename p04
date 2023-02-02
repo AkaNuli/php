@@ -1,0 +1,15 @@
+<form action="tarea.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="ARCHIVO" id="fileToUpload">
+    <input type="submit" value="Subir archivo" name="submit">
+</form>
+<?php
+if(isset($_FILES["fileToUpload"])) {
+		$file = $_FILES["fileToUpload"];
+		$file_name = $file["name"];
+		$file_tmp = $file["tmp_name"];
+		move_uploaded_file($file_tmp,"uploads/".$file_name);
+}
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "mucho peso master";
+}
+?>
