@@ -1,0 +1,101 @@
+//1. 
+
+
+<?php
+$n1 = 5;
+$n2 = 8;
+
+if ($n1 > $n2) {
+    echo $n1 . " es mayor que " . $n2;
+} else {
+    echo $n2 . " es mayor que " . $n1;
+}
+?>
+
+//2.
+
+<?php
+$nota = 12;
+
+switch ($nota) {
+    case 5:
+    case 6:
+        echo "APROBADO";
+        break;
+    case 7:
+    case 8:
+        echo "NOtABLE";
+        break;
+    case 9:
+    case 10:
+        echo "SOBRESALIENTE";
+        break;
+    case $nota >= 0 && $nota < 5;
+        echo "Suspenso";
+        break;
+    default:
+        echo "El valor es erroneo";
+}
+?>
+
+// 3. 3. 
+
+<?php
+
+$motos = array("NInja4", "Ninja3", "Ninja2", "Ninja");
+$coches = array("Golf", "Golf2", "Golf3", "Golf4");
+
+function mostrar($vehiculos) {
+    sort($vehiculos);
+    foreach ($vehiculos as $vehiculo) { 
+        echo $vehiculo . "<br>";
+    }
+    echo "Existen " . count($vehiculos) . " elementos en el array" . "<br>"; 
+}
+
+
+foreach ($motos as $moto) {
+    echo $moto . "<br>";
+}
+
+echo "<br>";
+sort($coches);
+foreach ($coches as $coche) {
+    echo $coche . "<br>";
+}
+
+echo "<br>";
+
+mostrar($motos);
+
+echo "<br>";
+
+mostrar($coches);
+
+echo "<br>";
+
+$buscar = "Ninja";
+if (in_array($buscar, $motos)) {
+    echo $buscar . " se encuentra";
+} else {
+    echo $buscar . " no se encuentra";
+}
+
+?>
+
+//4. 
+
+
+<?php
+
+
+echo date("d-m-Y") . "<br>";
+
+
+echo date("H:i:s") . "<br>";
+
+
+echo date("d-m-Y H:i:s") . "<br>";
+
+
+echo date("l jS \of F Y h:i:s A") . "<br>";
