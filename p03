@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+	<H2>Hola</H2>
+      <form action="tarea.php" method="post">
+            <p>Name: <input type="text" name="nombre"></p>
+            
+            Gmail: <input type="text" name="email">
+            
+            <p>Website: <input type="text" name="website"></p>
+            
+            <p>Comment: <textarea rows="5" cols="30"></textarea></p>
+            
+            <p>
+            
+            Genero:
+            <input type="radio" name="genero" value="masculino">Masculino 
+ 
+            <input type="radio" name="genero" value="femenino">Femenino
+          
+            <input type="radio" name="genero" value="otro">Otro
+         
+            </p>
+            
+            <input type="enviar" value="Enviar">
+      
+      </form>
+
+</body>
+</html>
+
+<html>
+<?php
+$nombre = $_POST["nombre"];
+$gmail = $_POST["gmail"];
+$web = $_POST["web"];
+echo "Nombre: " . $name . "<br>";
+echo "Email: " . $email . "<br>";
+echo "Web: " . $web . "<br>";
+?>
+</html>
